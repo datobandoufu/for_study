@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">2022-8-4</div>
+    <ul>
+        <li>大头拌豆腐1</li>
+        <li>大头拌豆腐2</li>
+        <li>大头拌豆腐3</li>
+        <li>大头拌豆腐4</li>
+        <li>大头拌豆腐5</li>
+    </ul>
+    <div class="name">bighead</div>
+    <div class="name">bigheadand</div>
+    <script>
+        var timer=document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer);
+        console.dir(timer);
+
+        var lis=document.getElementsByTagName('li')
+        console.log(lis);
+        console.dir(lis);
+        for (var i=0;i<lis.length;i++){
+            console.log(lis[i]);
+        }
+
+        var namer=document.getElementsByClassName('name')
+        console.log(namer);
+
+        var first=document.querySelector('.name')
+        console.log(first);
+        var two=document.querySelector('#time')
+        console.log(two);
+        var three=document.querySelector('li')
+        console.log(three);
+        var four=document.querySelectorAll('li')
+        console.log(four);
+    </script>
+</body>
+</html>
