@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="time">时间</div>
+    <div id="text">大家早上好</div>
+    <img src="../image_01/desktop_10.jpg">
+    
+    <script>
+        var timer=document.querySelector('#time');
+        timer.innerHTML=getTime();
+        var text=document.querySelector('#text');
+        var img=document.querySelector('img')
+        var date=new Date();
+        var hour =date.getHours();
+        console.log(hour);
+        if(hour<12&&hour>8){
+            text.innerHTML='大家上午好';
+            img.src='../image_01/desktop_10.jpg';
+        } else if(hour<18&&hour>12){
+            text.innerHTML='大家下午好';
+            img.src='../image_01/desktop_1.jpg';
+        } else if(hour<8||hour>18){
+            text.innerHTML='大家晚上好';
+            img.src='../image_01/desktop_8.jpg';
+        }
+        function getTime(){
+            var date=new Date();
+            var hour=date.getHours();
+            var minute=date.getMinutes();
+            var Second=date.getSeconds();
+            return hour+':'+minute+':'+Second;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 300px;
+        }
+        div{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="ldh">刘德华</div>
+    <div id="zxy">张学友</div>
+    <img src="../image_01/desktop_1.jpg" alt="">
+
+    <script>
+        var ldh=document.querySelector('#ldh');
+        var zxy=document.querySelector('#zxy');
+        var img=document.querySelector('img');
+        zxy.onclick=function(){
+            img.src='../image_01/desktop_2.jpg'
+        }
+        ldh.onclick=function(){
+            img.src='../image_01/desktop_1.jpg'
+        }
+
+    </script>
+</body>
+</html>
