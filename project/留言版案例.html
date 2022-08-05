@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="text" cols="30" rows="10"></textarea>
+    <button type="submit">发送</button>
+    <ul></ul>
+    <script>
+        var text=document.querySelector('#text');
+        var btn=document.querySelector('button');
+        var ul=document.querySelector('ul');
+        btn.onclick=function(){
+            if(text.value!=''){ 
+            var li=document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML=text.value;
+            } else {
+                alert('请输入内容后再发送')
+            }
+            text.value='';
+         }
+    </script>
+</body>
+</html>
