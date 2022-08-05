@@ -1,0 +1,61 @@
+<!-- 输入框显示隐藏效果 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            margin: 0 auto;
+            width: 500px;
+            text-align: center;
+        }
+        input{
+            width: 200px;
+            height: 20px;
+            border: 1px solid #000;
+            color: blue;
+        }
+        .class{
+            border: pink 1px solid;
+        }
+    </style>
+</head>
+<body>
+   <div>
+    <input type="text" value="请输入用户名" id="name">
+    <input type="text" value="请输入密码" id="password">
+   </div>
+   <script>
+        var uname=document.querySelector('#name');
+        var password=document.querySelector('#password');
+        uname.onfocus=function(){
+            uname.value='';
+            uname.className='input class'
+        }
+        uname.onblur=function(){
+            uname.className='input class'
+            if(value==''){
+                uname.value='请输入用户名';
+            }
+        }
+        password.onfocus=function(){
+            console.log('123');
+            password.type='password';
+            password.value='';
+            password.className='input class'
+
+        }
+        password.onblur=function(){
+            password.className='input class'
+            if(value==''){
+            password.type='text';
+            password.value='请输入密码';
+            }
+        }
+   </script>
+</body>
+</html>

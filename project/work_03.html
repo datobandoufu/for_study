@@ -1,0 +1,39 @@
+<!-- 广告关闭    -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+            width: 300px;
+        }
+        div #first{
+            width: 300px;
+        }
+        div #two{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../image_01/desktop_1.jpg" id="first">
+        <img src="../image_01/wrong.png" id="two">
+    </div>
+    <script>
+        var btn=document.querySelector('#two');
+        // var img=document.querySelector('first');
+        var div=document.querySelector('div');
+        btn.onclick=function(){
+            div.style='display:none';
+        }
+    </script>
+</body>
+</html>

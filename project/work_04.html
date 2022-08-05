@@ -1,0 +1,62 @@
+<!-- 下拉菜单 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+        }
+        .first{
+            line-height: 50px;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            border-bottom:1px solid #0000ff;
+            cursor: pointer;
+        }
+        #lis{
+            display: none;
+        }
+        div ul{
+            list-style: none;
+            margin: 0 auto;
+            padding: 0px;
+        }
+        div ul li{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-bottom:1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">新浪微博</div>
+    <div id="lis">
+        <ul>
+            <li>新浪微博</li>
+            <li>新浪微博</li>
+            <li>新浪微博</li>
+        </ul>
+    </div>
+    <script>
+        var div=document.querySelector('.first');
+        var lis=document.querySelector('#lis');
+        var flag=true;
+        div.onclick=function(){
+            if(flag){
+                lis.style='display:block';
+                flag=false;
+            } else {
+                lis.style='display:none';
+                flag=true;
+            }
+        }
+    </script>
+</body>
+</html>
