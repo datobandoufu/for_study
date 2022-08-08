@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点击关闭定时器</button>
+    <img src="../image_01/desktop_10.jpg" alt="">
+    <script>
+        var img=document.querySelector('img');
+        var btn=document.querySelector('#btn');
+        function close(){
+            img.style.display='none';
+        }
+        var close=setTimeout(close,3000);
+        btn.addEventListener('click',function(){
+            clearTimeout(close);
+        })
+    </script>
+</body>
+</html>
