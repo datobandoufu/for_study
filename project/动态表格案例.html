@@ -101,19 +101,22 @@
                 tr.appendChild(td);
             }
 
+            var name=document.querySelector('#name');
+            var subject=document.querySelector('#subject');
+            var score=document.querySelector('#score');
+            var obj={name:name,subject:subject,scroe:score};
+            btn.onclick=function(){
+                datas.push(obj);
+                console.log(datas);
+            }
             var as=document.querySelectorAll('a');
                 for(var i=0;i<as.length;i++){
                     as[i].onclick=function(){
                     tbody.removeChild(this.parentNode.parentNode);
                     }
                 }
-            var name=document.querySelector('#name');
-            var subject=document.querySelector('#subject');
-            var score=document.querySelector('#score');
-            var obj={name,subject,score};
-            btn.onclick=function(){
-                datas.push(obj);
-            }
+
+
             
 
     </script>
