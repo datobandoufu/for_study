@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* table{
+            margin: 100px auto;
+            padding: 0;
+            border: 1px solid #000;
+            background-color: pink;
+        }
+        table thead tr th{
+            width: 100px;
+            height: 30px;
+            border-right: 1px solid #000;
+            text-align: center;
+            line-height: 30px;
+        }
+        th:last-child{
+            border-right: none;
+        }
+        table tbody td{
+            width: 100px;
+            height: 50px;
+            background-color: #fff;
+            border: 1px solid #000;
+        } */
+        /* ------------------ */
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    姓名：<input type="text" id="name">
+    科目：<input type="text" id="subject">
+    成绩：<input type="text" id="score">
+    <button id="btn">添加</button>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var datas=[
+            {
+                name:'ZS',
+                subject:'js',
+                score:80,
+            },{
+                name:'LS',
+                subject:'js',
+                score:100,
+            },{
+                name:'WW',
+                subject:'js',
+                score:90,
+            },{
+                name:'DL',
+                subject:'js',
+                score:85,
+            }
+        ]
+
+            var tbody=document.querySelector('tbody');
+            for (var i=0;i<datas.length;i++){
+                var tr=document.createElement('tr');
+                tbody.appendChild(tr);
+                for (var k in datas[i]){
+                    var td=document.createElement('td');
+                    td.innerHTML=datas[i][k];
+                    tr.appendChild(td);
+                }
+                var td=document.createElement('td');
+                td.innerHTML='<a href="javascript:;">删除</a>';
+                tr.appendChild(td);
+            }
+
+            var as=document.querySelectorAll('a');
+                for(var i=0;i<as.length;i++){
+                    as[i].onclick=function(){
+                    tbody.removeChild(this.parentNode.parentNode);
+                    }
+                }
+            var name=document.querySelector('#name');
+            var subject=document.querySelector('#subject');
+            var score=document.querySelector('#score');
+            var obj={name,subject,score};
+            btn.onclick=function(){
+                datas.push(obj);
+            }
+            
+
+    </script>
+</body>
+</html>
