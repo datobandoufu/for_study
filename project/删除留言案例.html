@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            width: 200px;
+            margin-bottom:20px ;
+            background-color:pink;
+        }
+        li a{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="massage" cols="30" rows="10"></textarea>
+    <button id="btn_1">发布</button>
+    <button id="btn_2">删除</button>
+    <ul></ul>
+<a href=""></a>
+    <script>
+        var massage=document.querySelector('#massage');
+        var btn_1=document.querySelector('#btn_1');
+        var btn_2=document.querySelector('#btn_2');
+        var ul=document.querySelector('ul')
+        btn_1.onclick=function(){
+            if(massage.value!=''){
+                var li =document.createElement('li');
+                ul.insertBefore(li,ul.children[0]);
+                li.innerHTML=massage.value+'<a href="javascript:;">删除</a>';
+            }   else {
+                alert('请输入内容后在发布');
+            }
+        massage.value='';
+
+        var as=document.querySelectorAll('a');
+            for(var i=0;i<as.length;I++){
+                as[i].onclick=function(){
+                ul.removeChild(this.parentNode);
+            }
+        }
+        }
+        btn_2.onclick=function(){
+            if(ul.children.length!=0){
+                ul.removeChild(ul.children[0]);
+            }   else {
+                alert('暂无内容可删除');
+            }
+        }
+    </script>
+</body>
+</html>
