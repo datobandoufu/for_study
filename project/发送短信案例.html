@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入验证码">
+    <button id="btn">点击发送</button>
+
+    <script>
+        var text=document.querySelector('input');
+        var btn=document.querySelector('#btn');
+        btn.addEventListener('click',function(){
+            var time=5;
+            alert('验证码为：12354984');
+            btn.disabled=true;
+            var timer=setInterval(function(){
+                if(time==0){
+                    clearInterval(timer);
+                    btn.disabled=false;
+                    btn.innerHTML='点击发送';
+                } else{
+                    btn.innerHTML='还剩下'+time+'秒';
+                    time--;
+                }
+            },1000)
+        })
+
+
+        // var btn = document.querySelector('button');
+        // var time = 3; // 定义剩下的秒数
+        // btn.addEventListener('click', function() {
+        //     btn.disabled = true;
+        //     var timer = setInterval(function() {
+        //         if (time == 0) {
+        //             // 清除定时器和复原按钮
+        //             clearInterval(timer);
+        //             btn.disabled = false;
+        //             btn.innerHTML = '发送';
+        //         } else {
+        //             btn.innerHTML = '还剩下' + time + '秒';
+        //             time--;
+        //         }
+        //     }, 1000);
+
+        // })
+    </script>
+</body>
+</html>

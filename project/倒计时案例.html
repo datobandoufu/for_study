@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+            text-align: center;
+            margin: 100px 42%;
+            line-height: 400px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">点击开始</button>
+    <button id="stop">点击停止</button>
+    <div>
+        <span id="hours"></span>
+        <span id="minutes"></span>
+        <span id="seconds"></span>
+    </div>
+    <script>
+        var hours=document.querySelector('#hours');
+        var minutes=document.querySelector('#minutes');
+        var seconds=document.querySelector('#seconds');
+        var inputTime=+new Date('2022-8-9 18:00');
+        var start=document.querySelector('#start');
+        var stop=document.querySelector('#stop');
+        var timers=null;
+
+        timer();
+        start.addEventListener('click',function(){
+            timers=setInterval(timer,1000);
+        });
+        stop.addEventListener('click',function(){
+            clearInterval(timers)
+        });
+
+
+        function timer(){
+           var thisTime=+new Date();
+           var times=(inputTime-thisTime)/1000;
+           var h=parseInt(times/3600%24);
+           h=h<10?'0'+h:h;
+           hours.innerHTML=h+'-';
+           var m=parseInt(times/60%60);
+           m=m<10?'0'+m:m;
+           minutes.innerHTML=m+'-';
+           var s=parseInt(times%60);
+           s=s<10?'0'+s:s;
+           seconds.innerHTML=s;
+        }
+    </script>
+</body>
+</html>

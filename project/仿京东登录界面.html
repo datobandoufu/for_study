@@ -17,8 +17,12 @@
         var btn=document.querySelector('#btn');
         var input=document.querySelector('input');
         btn.onclick=function(){
-        input.type='text';
-        }   
+            if(input.type=='password'){
+                input.type='text';
+            } else {
+                input.type='password';
+            }
+        }
     </script>
 </body>
 </html>
