@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        span{
+            position: absolute;
+            top: 300px;
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        var div=document.querySelector('div');
+        var span=document.querySelector('span');
+        animate(div,400);
+        animate(span,500);
+
+        function animate(obj,target){
+        var flag=true;
+        // var timer=setInterval(function(){  
+        //减少内存的占用 性能优化
+        obj.timer=setInterval(function(){
+            if(flag){
+                // clearInterval(timer);
+                obj.style.left=obj.offsetLeft+1+'px';
+            } else{
+                obj.style.left=obj.offsetLeft-1+'px';
+            }
+            if(obj.offsetLeft==target){
+                flag=false;
+            }else if(obj.offsetLeft==0){
+                flag=true;
+            }else if(obj.offsetLeft>target){
+                clearInterval(timer);
+            }
+        },1)
+        }
+
+    </script>
+</body>
+</html>
