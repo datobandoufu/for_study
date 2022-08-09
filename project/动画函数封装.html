@@ -26,15 +26,22 @@
     </style>
 </head>
 <body>
+    <button id="btn_1">点击开始</button>
+    <button id="btn_2">点击暂停</button>
     <div></div>
     <span></span>
     <script>
         var div=document.querySelector('div');
         var span=document.querySelector('span');
-        animate(div,400);
+        var btn_1=document.querySelector('#btn_1')
+        var btn_2=document.querySelector('#btn_2')
+        btn_1.addEventListener('click',function(){
+            animate(div,400);
+        })
         animate(span,500);
 
         function animate(obj,target){
+            clearInterval(obj.timer);
         var flag=true;
         // var timer=setInterval(function(){  
         //减少内存的占用 性能优化
@@ -53,6 +60,9 @@
                 clearInterval(timer);
             }
         },1)
+            btn_2.addEventListener('click',function(){
+                clearInterval(obj.timer)
+            })
         }
 
     </script>
