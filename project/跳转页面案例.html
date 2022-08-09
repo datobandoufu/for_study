@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击跳转</button>
+    <div></div>
+    <script>
+        var btn=document.querySelector('#btn');
+        var div=document.querySelector('div');
+        var time=5;
+        btn.addEventListener('click',function(){
+            location.href='https://www.bilibili.com/';
+        })
+        setInterval(function(){
+            if(time==0){
+                location.href='https://space.bilibili.com/36204844/favlist?fid=articles';
+            } else {
+                div.innerHTML=time+'秒后。跳转至下一页面';
+                time--;
+            }
+        },1000);
+    </script>
+</body>
+</html>
