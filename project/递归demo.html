@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            position: absolute;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../image_01/desktop_8.jpg" alt="">
+
+    <script>
+        var img=document.querySelector('img');
+        function timer(){
+            console.log(img.offsetLeft+1+'px');
+            img.style.left=img.offsetLeft+1+'px';
+        }
+        // var flag=true;
+        // var num=999;
+        function fn(num){
+            if(num==1){
+            } else{
+                timer();
+                num--;
+                setTimeout(add,1000);
+                function add(){
+                    // timer();
+                    fn(num);
+                }
+            }
+        }
+        fn();
+    </script>
+</body>
+</html>

@@ -38,8 +38,11 @@
         btn_1.addEventListener('click',function(){
             animate(div,400);
         })
+        btn_2.addEventListener('click',function(){
+                clearInterval(div.timer)
+        })
         animate(span,500);
-
+        
         function animate(obj,target){
             clearInterval(obj.timer);
         var flag=true;
@@ -60,9 +63,6 @@
                 clearInterval(timer);
             }
         },1)
-            btn_2.addEventListener('click',function(){
-                clearInterval(obj.timer)
-            })
         }
 
     </script>

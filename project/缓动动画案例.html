@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            display: block;
+            position: absolute;
+            top: 400px;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        div{
+            position: absolute;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn_1">500</button>
+    <button id="btn_2">800</button>
+    <span></span>
+
+    <script>
+
+            // 缓动效果达成，但未完善，存在部分问题
+        var span=document.querySelector('span');
+        var btn_1=document.querySelector('#btn_1');
+        var btn_2=document.querySelector('#btn_2');
+        btn_1.addEventListener('click',function(){
+            animate(span,500,function(){
+                span.style.backgroundColor='pink'
+            });
+        });
+        btn_2.addEventListener('click',function(){
+            animate(span,800,function(){
+                span.style.backgroundColor='yellow'
+            });
+        })
+
+        function animate(obj,target,callback){
+            clearInterval(obj.timer);
+        // var timer=setInterval(function(){  
+        //减少内存的占用 性能优化
+        obj.timer=setInterval(function(){
+            var step=(target-obj.offsetLeft)/25;
+            step=step<0?Math.floor(step):Math.ceil(step);
+            if(obj.offsetLeft==target){
+                clearInterval(obj.timer);
+                if(callback){
+                    callback();
+                }
+            } else {
+                obj.style.left=obj.offsetLeft+step+'px';
+            }
+        },15)
+        }
+    </script>
+</body>
+</html>
